@@ -22,6 +22,7 @@ pub struct Transaction {
     /// Recipient (None when contract creation)
     pub to: Option<H160>,
     /// Transfered value
+    #[serde(default)]
     pub value: U256,
     /// Gas Price
     #[serde(rename = "gasPrice")]
@@ -101,6 +102,7 @@ pub struct RawTransactionDetails {
     /// Recipient (None when contract creation)
     pub to: Option<H160>,
     /// Transfered value
+    #[serde(default)]
     pub value: U256,
     /// Gas Price
     #[serde(rename = "gasPrice")]

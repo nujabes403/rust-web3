@@ -184,6 +184,7 @@ pub struct Call {
     /// Recipient
     pub to: Address,
     /// Transfered Value
+    #[serde(default)]
     pub value: U256,
     /// Gas
     pub gas: U256,
