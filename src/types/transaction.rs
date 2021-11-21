@@ -29,6 +29,7 @@ pub struct Transaction {
     /// Gas amount
     pub gas: U256,
     /// Input data
+    #[serde(default)]
     pub input: Bytes,
 }
 
@@ -48,7 +49,8 @@ pub struct Receipt {
     #[serde(rename = "blockNumber")]
     pub block_number: Option<U64>,
     /// Cumulative gas used within the block after this was executed.
-    #[serde(rename = "cumulativeGasUsed")]
+    // #[serde(rename = "cumulativeGasUsed")]
+    #[serde(default)]
     pub cumulative_gas_used: U256,
     /// Gas used by this transaction alone.
     ///
@@ -106,6 +108,7 @@ pub struct RawTransactionDetails {
     /// Gas amount
     pub gas: U256,
     /// Input data
+    #[serde(default)]
     pub input: Bytes,
     /// ECDSA recovery id, set by Geth
     pub v: Option<U64>,
