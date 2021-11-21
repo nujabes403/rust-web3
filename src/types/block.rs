@@ -14,8 +14,9 @@ pub struct BlockHeader {
     #[serde(default)] // Celo doesn't have this field.
     pub uncles_hash: H256,
     /// Miner/author's address.
-    #[serde(rename = "miner")]
-    pub author: Option<H160>,
+    // #[serde(rename = "miner")]
+    #[serde(default)]
+    pub author: H160,
     /// State root hash
     #[serde(rename = "stateRoot")]
     pub state_root: H256,
@@ -69,8 +70,9 @@ pub struct Block<TX> {
     #[serde(default)] // Celo doesn't have this field.
     pub uncles_hash: H256,
     /// Miner/author's address.
-    #[serde(rename = "miner")]
-    pub author: Option<H160>,
+    // #[serde(rename = "miner")]
+    #[serde(default)]
+    pub author: H160,
     /// State root hash
     #[serde(rename = "stateRoot")]
     pub state_root: H256,
